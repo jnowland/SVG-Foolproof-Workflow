@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <title>frontend-example.com</title>
+
+    <link rel="stylesheet" href="/theme/styles/screen.css">
+
+<!--[if lt IE 9]>
+    <script src="/bower_components/html5shiv/dist/html5shiv.js"></script>
+    <script>
+      document.createElement('svg');
+    </script>
+<![endif]-->
+
+<script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="home">
+
+
+<h1>SVG Sprites</h1>
+
+<svg class="icon-clothes">
+    <use xlink:href="/theme/images/compiled/vector-sprites-working.svg#icon-clothes"></use>
+</svg>
+
+<svg class="icon-paint">
+  <use xlink:href="/theme/images/compiled/vector-sprites-working.svg#icon-paint"></use>
+</svg>
+
+<hr>
+
+<h2>Raster Only Sprites</h2>
+
+<i class="Icon Icon--sprite-example-infoBlue">Info Blue</i>
+<i class="Icon Icon--sprite-example-sprite-star-yellow">Yellow</i>
+<i class="Icon Icon--sprite-example-textured-bolt">Texture Bold</i>
+
+<script src="/bower_components/svg4everybody/svg4everybody.ie8.min.js"></script>
+
+</body>
+</html>

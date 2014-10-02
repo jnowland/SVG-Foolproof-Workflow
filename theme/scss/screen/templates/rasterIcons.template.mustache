@@ -1,0 +1,99 @@
+/*  =====================================================================================================
+    Generated Sprites Document - Attention: File is automatically generated (Do not add any rules here.)
+    ===================================================================================================== */
+
+/*
+Icon
+
+{{#items}}
+.Icon--{{name}} - {{name}} Icon
+{{/items}}
+
+Styleguide Icon
+*/
+
+$sprites: (
+    {{#items}}
+    {{name}}: (
+        x: {{px.x}},
+        y: {{px.y}},
+        offset_x: {{px.offset_x}},
+        offset_y: {{px.offset_y}},
+        width: {{px.width}},
+        height: {{px.height}},
+        total_width: {{px.total_width}},
+        total_height: {{px.total_height}},
+        image: '../{{{escaped_image}}}'
+    ),
+    {{/items}}
+);
+
+@function sprite($sprite, $attribute) {
+    @return map-get(map-get($sprites, $sprite), $attribute);
+}
+
+@mixin spriteWidth($sprite) {
+    width: sprite($sprite, 'width');
+}
+
+@mixin spriteHeight($sprite) {
+    height: sprite($sprite, 'height');
+}
+
+@mixin spritePosition($sprite) {
+    background-position: sprite($sprite, 'offset_x') sprite($sprite, 'offset_y');
+}
+
+// Center an Icon inside a container with optional x and y nudging
+// @include spriteCenterInContainer(textured-bolt, $benefitsIconSize, $benefitsIconSize, 0, 0);
+
+@mixin spriteCenterInContainer($sprite, $container-width, $container-height, $nudget-x: 0, $nudget-y: 0 ) {
+    $icon-center-x:  sprite($sprite, 'offset_x') + round( ( ( $container-width - sprite($sprite, 'width') ) / 2 ) )  + $nudget-x;
+    $icon-center-y:  sprite($sprite, 'offset_y') + round( ( ( $container-height - sprite($sprite, 'height') ) / 2) ) + $nudget-y;
+    background-position: #{$icon-center-x} #{$icon-center-y};
+}
+
+@mixin spriteImage($sprite) {
+    background-image: url( sprite($sprite, 'image') );
+}
+
+@mixin sprite($sprite) {
+    @include spritePosition($sprite);
+    @include spriteWidth($sprite);
+    @include spriteHeight($sprite);
+}
+
+@mixin iconBlock() {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    text-align: left!important; //ensures that text-align doesn't upset text-indent in firefox.
+    text-indent: -9999px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%IconBackground {
+    background-image: url( ../images/compiled/raster-sprite.png ); //make this dynamic
+}
+
+.Icon {
+    @include iconBlock;
+    @extend %IconBackground;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+/*  Genereated Sprite Output
+    ========================================================================== */
+
+{{#items}}
+.Icon--{{name}} {
+    @include sprite({{name}});
+}
+{{/items}}

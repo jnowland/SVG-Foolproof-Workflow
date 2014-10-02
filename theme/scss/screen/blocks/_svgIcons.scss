@@ -1,0 +1,23 @@
+/*  ==========================================================================
+    SVG Icons
+    ========================================================================== */
+
+// Do these need to be automatically genereated off an image converstion?
+
+[class*='icon-'] {
+  width: 32px;
+  height: 32px;
+  margin: 10px;
+}
+.icon-clothes {
+  fill: red;
+}
+.icon-paint {
+  fill: green;
+}
+.icon-note {
+  fill: #f06d06;
+}
+.icon-flower {
+  fill: gray;
+}

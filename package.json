@@ -1,0 +1,28 @@
+{
+  "name": "testingSprites",
+  "version": "0.0.0",
+  "description": "Newism's Frontend Template",
+  "keywords": [],
+  "homepage": "http://newism.com.au",
+  "bugs": "https://github.com/newism/frontend-framework/issues",
+  "author": "James Nowland <james.nowland@newism.com.au> (http://newism.com.au)",
+  "contributors": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newism/frontend-framework"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-svgstore": "~0.3.3",
+    "grunt-spritesmith": "~2.1.1",
+    "grunt-svg2png": "~0.2.5",
+    "grunt-contrib-sass": "~0.8.1",
+    "grunt-modernizr": "~0.5.2"
+  },
+  "engines": {
+    "node": ">=0.10.28"
+  },
+  "private": true
+}

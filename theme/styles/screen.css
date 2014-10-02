@@ -1,0 +1,105 @@
+/*  Import the Generated Sprite Files
+    ========================================================================== */
+/*
+When the browser can't make svg work render this file.
+
+.lt-ie9 .icon-clothes - icon-clothes Icon
+.lt-ie9 .icon-paint - icon-paint Icon
+
+Styleguide SVG Fallback PNGs
+*/
+.lt-ie9 [class*='icon-'] {
+  background-image: url(../images/compiled/vector-fallback-sprite.png); }
+
+.lt-ie9 [class*='icon-'] {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  text-align: left !important;
+  text-indent: -9999px;
+  display: inline-block;
+  *display: block;
+  *float: left;
+  vertical-align: middle; }
+  .lt-ie9 [class*='icon-']:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%; }
+
+/*  Genereated Sprite Output
+    ========================================================================== */
+.lt-ie9 .icon-clothes {
+  background-position: 0px 0px;
+  width: 32px;
+  height: 32px; }
+
+.lt-ie9 .icon-paint {
+  background-position: 0px -34px;
+  width: 32px;
+  height: 32px; }
+
+/*
+Icon
+
+.Icon--sprite-example-infoBlue - sprite-example-infoBlue Icon
+.Icon--sprite-example-sprite-star-yellow - sprite-example-sprite-star-yellow Icon
+.Icon--sprite-example-textured-bolt - sprite-example-textured-bolt Icon
+
+Styleguide Icon
+*/
+.Icon {
+  background-image: url(../images/compiled/raster-sprite.png); }
+
+.Icon {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  text-align: left !important;
+  text-indent: -9999px;
+  display: inline-block;
+  vertical-align: middle; }
+  .Icon:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%; }
+
+/*  Genereated Sprite Output
+    ========================================================================== */
+.Icon--sprite-example-infoBlue {
+  background-position: 0px 0px;
+  width: 21px;
+  height: 22px; }
+
+.Icon--sprite-example-sprite-star-yellow {
+  background-position: 0px -24px;
+  width: 27px;
+  height: 27px; }
+
+.Icon--sprite-example-textured-bolt {
+  background-position: 0px -53px;
+  width: 44px;
+  height: 52px; }
+
+/*  Other Imports.
+    ========================================================================== */
+/*  ==========================================================================
+    SVG Icons
+    ========================================================================== */
+[class*='icon-'] {
+  width: 32px;
+  height: 32px;
+  margin: 10px; }
+
+.icon-clothes {
+  fill: red; }
+
+.icon-paint {
+  fill: green; }
+
+.icon-note {
+  fill: #f06d06; }
+
+.icon-flower {
+  fill: gray; }

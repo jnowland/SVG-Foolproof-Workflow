@@ -1,0 +1,96 @@
+/*
+When the browser can't make svg work render this file.
+
+.lt-ie9 .icon-clothes - icon-clothes Icon
+.lt-ie9 .icon-paint - icon-paint Icon
+
+Styleguide SVG Fallback PNGs
+*/
+
+$fallBackSprites: (
+    icon-clothes: (
+        x: 0px,
+        y: 0px,
+        offset_x: 0px,
+        offset_y: 0px,
+        width: 32px,
+        height: 32px,
+        total_width: 32px,
+        total_height: 66px,
+        image: '../../vector-fallback-sprite.png'
+    ),
+    icon-paint: (
+        x: 0px,
+        y: 34px,
+        offset_x: 0px,
+        offset_y: -34px,
+        width: 32px,
+        height: 32px,
+        total_width: 32px,
+        total_height: 66px,
+        image: '../../vector-fallback-sprite.png'
+    ),
+);
+
+@function fallBackSprite($sprite, $attribute) {
+    @return map-get(map-get($fallBackSprites, $sprite), $attribute);
+}
+
+@mixin fallBackSpriteWidth($sprite) {
+    width: fallBackSprite($sprite, 'width');
+}
+
+@mixin fallbackSpriteHeight($sprite) {
+    height: fallBackSprite($sprite, 'height');
+}
+
+@mixin fallBackSpritePosition($sprite) {
+    background-position: fallBackSprite($sprite, 'offset_x') fallBackSprite($sprite, 'offset_y');
+}
+
+@mixin fallBackSpriteImage($sprite) {
+    background-image: url( fallBackSprite($sprite, 'image') );
+}
+
+@mixin fallBackSprite($sprite) {
+    @include fallBackSpritePosition($sprite);
+    @include fallBackSpriteWidth($sprite);
+    @include fallbackSpriteHeight($sprite);
+}
+
+@mixin iconBlock() {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    text-align: left!important; //ensures that text-align doesn't upset text-indent in firefox.
+    text-indent: -9999px;
+    display: inline-block;
+    *display: block; *float: left; //ie-7
+    vertical-align: middle;
+}
+
+%IconFallbackBackground {
+    background-image: url( ../images/compiled/vector-fallback-sprite.png ); //make this dynamic
+}
+
+.lt-ie9 [class*='icon-'] {
+    @include iconBlock;
+    @extend %IconFallbackBackground;
+
+    &:before {
+        content: "";
+        display: block;
+        width: 0;
+        height: 150%;
+    }
+}
+
+/*  Genereated Sprite Output
+    ========================================================================== */
+
+.lt-ie9 .icon-clothes {
+    @include fallBackSprite(icon-clothes);
+}
+.lt-ie9 .icon-paint {
+    @include fallBackSprite(icon-paint);
+}

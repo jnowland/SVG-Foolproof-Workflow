@@ -1,0 +1,17 @@
+{
+  "name": "IconsSVG",
+  "private": true,
+  "dependencies": {
+    "svg4everybody": "*",
+    "modernizr": "~2.8.3",
+    "modernizr-retina-test": "https://gist.githubusercontent.com/jnowland/186d8dc925593a413edd/raw/ca708c8fef23374e48887060b99acf6402ceb9ec/modernizr-retina-test.js"
+  },
+  "devDependencies": {
+    "html5shiv": "~3.7.2"
+  },
+  "overrides": {
+    "jquery-ui": {
+      "main": "ui/widget.js"
+    }
+  }
+}
